@@ -1,0 +1,60 @@
+{% extends "user/header.html" %}
+{% load i18n %}
+
+{% block style %}
+<style>
+    .contain > img,
+    .contain > div {
+        display: inline-block;
+    }
+
+    #box {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+
+}
+
+
+
+body, html{
+    background-color: #f3f3f3;
+    height: 100%;
+    margin: 0px;
+}
+
+</style>
+{% endblock %}
+
+{% block content  %}
+<div class="px-4 py-3">
+<div class="row">
+    {% for order_item in object.items.all %}
+    <div class="contain px-4 bg-light py-3 w-100 mb-2">
+        <img src="{{ order_item.item.photo }}" width="30px"  height="100px" style="display: inline;">
+        <div class="align-top" style="padding-left: 20px;" id="box">
+          <strong><div class="text-truncate">{{ order_item.item.title }}</div></strong>
+          <div class="">{% trans "Flavor : Sparking" %} {{order_item.item.color}}</div>
+          <strong><div class="">${{order_item.item.price}}</div></strong>
+          <div class="text-success">{% trans "In Stock" %}</div>
+          <div class="text-dark">{% trans "Sold by Amazon.com" %}</div>
+
+        </div>
+    </div>
+</div>
+    {% endfor %}
+
+<div class="px-4 py-3" >
+        <div class="" style="font-size: 18px; font-weight: bold;">{% trans "Add a payment method" %}</div>
+    
+    <div class="my-3">
+       <a href="{% url 'core:credit' %}"><i class="fas fa-credit-card"></i><span class="px-3">{% trans "Add a credit or debit card" %}</span><i class="fas fa-angle-right" style="float: right;"></i></a>
+        <hr>
+        <i class="fas fa-university"></i><span class="px-3">{% trans "Add your Venmo account" %}</span><i class="fas fa-angle-right" style="float: right;"></i>
+        <hr>
+        <a href="{% url 'core:giftcart' %}"><i class="fab fa-cc-apple-pay"></i><div class="px-3 d-inline">{% trans "Add a gift card, promo code, or voucher" %}</div><i class="fas fa-angle-right" style="float: right;"></i></a>
+    </div>
+</div>
+</div>
+{% endblock content %}

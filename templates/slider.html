@@ -1,0 +1,33 @@
+<!-- Side bar -->
+{% load i18n %}
+<div class="wrapper shadow" id="wrapper">
+    <div id="slider-header" class="py-3 px-3">
+        <div class="" style="float: right;">{% trans "Your Account" %} &nbsp;<i class="fas fa-user" style='font-size: 20px; color:#fff;'></i></div>
+        <div class="mt-4" style="font-weight: bold ;">{% trans "Browse" %}
+          <span class="" style="font-weight: 500; font-size: 23px; line-height: 75%;">Amazon</span>
+        </div>
+    </div>
+    <div id="" class="">
+      <a href="{% url 'core:home' %}"><div class="py-3 px-3" style="color: #111111; font-weight: bold;">{% trans "Amazon Home" %} <i class="fas fa-home" style="float: right; font-size: 20px;"></i></div></a>
+       <div id="hr"></div>
+       <div class="py-3  px-3" style="color: #111111; font-weight: bold;">{% trans "Trending" %}</div>
+       <a href="{% url 'core:redwine' %}"><div class="pb-3 px-3" style="color: #111111;">{% trans "Discover Something New" %}</div></a>
+       <div id="hr"></div>
+       <div class="py-3  px-3" style="color: #111111; font-weight: bold;">{% trans "Wines" %}</div>
+      <a href="{% url 'core:redwine' %}"><div class="pb-3 px-3" style="color: #111111;">{% trans "Red Wine's" %}</div></a> 
+      <a href="{% url 'core:whitewine' %}"><div class="pb-3 px-3" style="color: #111111;">{% trans "White Wine's" %}</div></a>
+        <a href="{% url 'core:rosewine' %}"><div class="pb-3 px-3" style="color: #111111;">{% trans "Rose Wine's" %}</div></a>
+          <a href="{% url 'core:dessertwine' %}"><div class="pb-3 px-3" style="color: #111111;">{% trans "Dessert Wine's" %}</div></a>
+       <div id="hr"></div>
+       <a href="https://www.amazon.com/go/contact-us?orderId"><div class="py-3  px-3" style="color: #111111; font-weight: bold;">{% trans "Contact Us" %}</div></a>
+       {% if user.is_authenticated %}
+       <a href="{% url 'core:logout' %}" class=""><div class="px-3" style="color: #111111; font-weight: bold; vertical-align: middle;">{% trans "Log out" %}</div></a>
+       {% else %}
+       <a href="{% url 'core:register' %}" class=""><div class="px-3" style="color: #111111; font-weight: bold; vertical-align: middle;">{% trans "Sign in" %}</div></a>
+       {% endif %}
+
+    </div>
+</div>
+
+
+            <!-- Side bar end -->

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block style %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block content  %}
+
+
+    <div class="">
+    <div class="pt-3 px-4 text-center" style="font-weight: bold; font-size: 20px; color:#af7d3b;">
+      {% trans "90+ Rated Wines" %}  
+    </div>
+    <div class="px-4 text-center" style="font-weight: bold; font-size: 15px; color:#af7d3b;">
+        {% trans "Hundreds of bottles to choose from" %}
+    </div>
+ <center><img src="https://cdn.shopify.com/s/files/1/0263/8394/1731/products/1CLYNELISHSELRESEMALT56820_1024x1024.png?v=1652362407V" style="height: 300px; width: auto;"></center>   
+</div>
+<div class="px-3">
+{% if user.is_authenticated %}
+<div class="text-dark mb-2" style="font-size: 16px; font-weight: bold;">
+    {% trans "Discover new wines" %}
+</div>
+ 
+<center><a href="{% url 'core:redwine' %}"><button class="btn btn-warning w-100" style="max-width: 460px;">{% trans "Top deal" %}</button></a></center>
+{% else %}
+<div class="text-dark mb-2" style="font-size: 16px; font-weight: bold;">
+    {% trans "Sign in for the best experience" %}
+</div>
+<center><a href="{% url 'core:login' %}"><button class="btn btn-warning w-100" style="max-width: 460px;">{% trans "Sign in securely" %}</button></a></center>
+{% endif%}
+{% if user.is_authenticated %}
+{% else %}
+<div class="mt-2" style="color: #59919c; font-weight: bold;"><a href="{% url 'core:register' %}">{% trans "Create an account" %}</a></div>
+{% endif%}
+</div>
+<hr>
+<div class="px-4">
+    <div class="text-dark text-center pb-3" style="font-weight: bold; font-size: 18px;">{% trans "JUST ARRIVED" %}</div>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            {% for item in itemsSlider %}
+        <a href="{{ item.get_absolute_url }}"><div class="carousel-item active" data-bs-interval="2000">
+                <div class="card product-item border-0 mb-4">
+                    
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border px-3 text-center">
+                        <img class="img-fluid" src="{{ item.photo }}" style="height:250px; width:auto;"  alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">{{ item.title }}</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>${{ item.price }}</h6>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+    <div class="mx-4 py-2">
+        <div class="my-2" style=" font-size: 18px;">{% trans "Most Rated Wine's" %}</div>
+           <div class="">
+              <div class="row">
+                {% for item in items %}
+                <input type="hidden" id="sub-rate" value="{{ item.rate }}">
+                <div class="col-6 col-md-4 col-lg-3 my-2">
+                    <a href="{{ item.get_absolute_url }}"><div class="card" >
+                     <center><img src="{{ item.photo }}" style="height: 160px; width: 40px;" class="card-img-top py-2" alt="..."></center>   
+                        <div class="card-body">
+                          <div class="card-text text-truncate-container">
+                          <p class="text-truncate mb-0"> {{ item.title }} </p>
+                          </div>
+    
+                         <div class="">
+                            <img src="{% static 'img/star5.png' %}" height="20px" width="auto">
+                         </div>
+                         <div class="ml-0" id="review" style="color: #364759; font-weight: bold;">{{rand_list}} {% trans "reviews" %}</div>
+                         <div class="" id="" style=" font-weight: bold;">${{ item.price }}</div>
+                        </div>
+                      </div></a>
+                </div>
+                
+                {% endfor %}
+              </div>
+           </div>
+    </div>
+    
+
+
+
+{% endblock content %}

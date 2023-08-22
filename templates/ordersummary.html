@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load cart_template_tags %}
+
+{% block style %}
+<style>
+    .contain > img,
+    .contain > div {
+        display: inline-block;
+    }
+
+    #box {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+</style>
+{% endblock %}
+
+{% block content  %}
+<div class="py-3 px-4">
+    {% if object.get_total %}
+    <div class="">
+        <span style="font-size: 18px;">{% trans "Subtotal" %}</span>
+        <span style="font-size: 18px; font-weight: 600;">${{ object.get_total }}</span>
+    </div>
+   <a href="{% url 'core:address' %}"><button class="btn btn-lg w-100 shadow mt-3" style="background-color: #fed813; font-size: 16px; font-weight: bold;" type="button">{% trans "Proceed to checkout" %} ({{ request.user|cart_item_count }} {% trans "items" %})</button></a>
+    
+    <hr>
+    {% endif %}
+    <div class="d-inline">
+
+    <div class="row">
+        {% for order_item in object.items.all %}
+        <div class="contain px-4 bg-light py-2 w-100 mb-2">
+            <img src="{{ order_item.item.photo }}" width="40px"  height="140px" style="display: inline;">
+            <div class="align-top" style="padding-left: 20px;" id="box">
+              <strong><div class="text-truncate">{{ order_item.item.title }}</div></strong>
+              <div class="">{% trans "Flavor" %} : {% trans "Sparking" %} {{order_item.item.color}}</div>
+              <strong><div class="">${{order_item.item.price}}</div></strong>
+              <div class="text-success">{% trans "In Stock" %}</div>
+              <a href="{% url 'core:added-to-cart' order_item.item.slug %}"><i class="fas fa-plus"></i></a> <div class="text-dark d-inline px-3">{% trans "Quality" %} {{ order_item.quantity }}</div><a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}"><i class="fas fa-minus"></i></a>
+               <div class="form-check mb-4"  >
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                <label class="form-check-label text-truncate" style="font-weight: bold;" for="defaultCheck1">
+                    {% trans "Send as a gift" %}.&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ order_item.item.get_remove_from_cart_url }}"><i class="fas fa-trash" style="float: right;"></i></a>
+                </label>
+              </div> 
+            </div>
+        </div>
+        {% empty %} 
+ <center><div class="text-center" style="max-width: 460px;">
+            <div class="mb-4" style="font-weight: bold;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRllS5xtNEkqUQT5mY5HvLBeKfvwLqsrTl3Zw&usqp=CAU" height="80px" width="auto">
+               <div class="my-3">{% trans "Your Amazon Cart is empty" %}</div>
+              <a href="{% url 'core:home' %}"><button type="button" class="btn btn-lg w-100 mt-2 shadow rounded" style="background-color: #fed813; font-size: 16px; font-weight: bold;">{% trans "Continue shopping" %}</button></a>
+            </div>
+        </div> </center>       
+        
+        {% endfor %}
+    </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

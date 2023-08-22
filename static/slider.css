@@ -1,0 +1,31 @@
+.wrapper{
+  position: fixed;
+  top:0;
+  width: 100%;
+  max-width: 250px;
+  z-index: 20;
+  height: 100vh;
+  background-color: white;
+  display: none;
+  overflow: scroll;
+}
+
+
+#slider-header{
+  background-color: #364759;
+  color: #fff;
+
+}
+
+#hr{
+  height: 0px;
+  width: auto;
+  border: 2px solid #d5dbdb;
+}
+
+.hr{
+  height: 0px;
+  width: auto;
+  border: 1px solid #d5dbdb;
+}
+

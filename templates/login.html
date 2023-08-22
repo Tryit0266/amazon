@@ -1,0 +1,132 @@
+{% extends "user/header.html" %}
+{% load i18n %}
+{% block content %}      
+
+{% load crispy_forms_tags %}
+
+
+<div class="container py-2 px-3">
+
+  <div class="border border-white rounded w-50 ml-0 mr-0 mx-auto" id="container" style="min-width: 460px; width: 100%; border: 1ps solid white !important;">
+    <div class="" style="font-size: 23px; color: #171717; min-width: 460px; width: 100%;">{% trans "Welcome" %}</div>
+  <div class="border rounded">
+  <form method="POST" autocomplete="off">
+    <div class="form-check py-3 mb-0" id="sign-up-wrapper" style="padding-left: 35px;">
+       <a href="" onclick="checked1()" id="radio1"><input class="form-check-input"  type="radio" name="exampleRadios" id="exampleRadios1" value="option1"></a> 
+        <label class="form-check-label" for="exampleRadios1">
+    <strong> <span style="color: #171717;">{% trans "Create account" %}. </span><span style="color: #171717; font-size: 13px;">{% trans "New to Amazon" %}?</span></strong>    
+        </label>
+      </div>
+
+    <div id="sign-up" class="py-2 px-3">
+        {{ register_form|crispy }}
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" onclick="checkboxsignup()" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              {% trans "Show password" %}
+            </label>
+        </div>                    
+		<button class="btn btn-warning w-100" style="font-weight: bold;" type="submit">Continue</button>
+        <div class="mt-2 mb-1">
+          {% trans "By creating an account, you agree to Amazon's" %}<a href="">{% trans "Conditions of Use" %}</a> and <a href="">{% trans "Privacy Notice" %}.</a>
+        </div>
+
+    </div>
+
+    {% csrf_token %}
+
+
+ <!--  Log in -->
+    <div class="form-check py-3" id="login-wrapper" style=" padding-left: 35px;">
+        <a href="" onclick="checked2()"><input class="form-check-input"  type="radio" name="exampleRadios" id="exampleRadios2" value="option2"></a>
+        <label class="form-check-label" for="exampleRadios2">
+            <strong> <span style="color: #171717;">{% trans "Sign in" %}. </span><span style="color: #171717; font-size: 13px;">{% trans "Already a customer?" %}</span></strong>    
+        </label>
+      </div>
+<div id="login" class="py-2 px-3">
+    {{ login_form|crispy }}
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" onclick="checkboxlogin()" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          {% trans "Show password" %}
+        </label>
+        <a href="" class="" style="float: right; font-size: 13px;">{% trans "Forgot password?" %}</a>
+    </div>
+    
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" checked>
+        <label class="form-check-label" for="defaultCheck1">
+          {% trans "Keep me signed in" %}
+        </label>
+      </div>
+    <button class="btn btn-warning w-100" style="font-weight: bold;" type="submit">{% trans "Sign in" %}</button>
+
+    <div class="mt-2 mb-1">
+      {% trans "By continuing, you agree to Amazon's" %} <a href="">{% trans "Conditions of Use" %}</a> and <a href="">{% trans "Privacy Notice" %}.</a>
+    </div>
+</div>
+<!-- Login end -->
+  </form>
+</div>
+
+</div>
+
+
+</div>
+<script>
+    window.onload = function(){
+        var url = window.location.href
+            if(url.split('/signup/').length > 1) {
+                document.getElementById("login").style.display='none';
+                document.getElementById("login-wrapper").style.backgroundColor='#f3f3f3';
+                document.getElementById("exampleRadios1").checked = true;
+
+
+            } else {
+                document.getElementById("sign-up").style.display='none';
+                document.getElementById("sign-up-wrapper").style.backgroundColor='#f3f3f3';
+                document.getElementById("exampleRadios2").checked = true;
+            }
+
+
+};
+
+</script>
+<script>
+    function checked1(){
+        window.location.href = "{% url 'core:register' %}";
+        
+    };
+
+    function checked2(){
+        window.location.href = "{%  url 'core:login' %}";
+    }
+
+    function checkboxlogin() {
+      var x = document.getElementById("id_password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+
+    function checkboxsignup() {
+      var x = document.getElementById("id_password1");
+      var y = document.getElementById("id_password2");
+      if (x.type === "password") {
+        x.type = "text";
+        y.type = "text";
+      } else {
+        x.type = "password";
+        y.type = "password";
+      }
+    }
+
+  
+
+
+</script>
+
+
+{% endblock %}

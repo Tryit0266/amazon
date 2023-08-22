@@ -1,0 +1,45 @@
+{% extends "user/header.html" %}
+{% load i18n %}
+
+{% block style  %}
+<style>
+#disabled-input{
+     width: 100%;
+     border-radius: 4px;
+     padding-left: 10px;
+}
+
+.address{
+border-top: none;
+border-top-right-radius: none;
+border-top-left-radius: none;
+}
+</style>
+{% endblock %}
+
+{% block content %} 
+
+<form method="POST">
+   {% csrf_token %}
+<div class="py-4 px-4" style="background-color: #f3f3f3;">
+   <strong><div class="mb-2" style="font-size: 18px;">{% trans "Add a new address" %}</div></strong>
+
+<input type="text" id="disabled-input" class="shadow py-2 mb-3" style="border: 1px solid #999999" value="Canada" disabled>
+<strong><div class="mb-2" style="font-size: 15px;">{% trans "Full name (First and Last name)" %}</div></strong>
+{{form.fullname}}
+<strong><div class="mb-2 mt-2" style="font-size: 15px;">{% trans "Phone number" %}</div></strong>
+{{form.phone}}
+<strong><div class="mb-2 mt-2" style="font-size: 15px;">{% trans "Address" %}</div></strong>
+{{form.address1}}
+{{form.address2}}
+<strong><div class="mb-2 mt-2" style="font-size: 15px;">{% trans "City" %}</div></strong>
+{{form.city}}
+<strong><div class="mb-2 mt-2" style="font-size: 15px;">{% trans "Province/Territoty" %}</div></strong>
+{{form.province}}
+<strong><div class="mb-2 mt-2" style="font-size: 15px;">{% trans "Postal code" %}</div></strong>
+{{form.postalcode}}
+<button type="submit" class="btn btn-lg w-100 shadow mt-3" style="background-color: #fed813; font-size: 17px; font-weight: bold;">{% trans "Use this address" %}</button>
+</div>
+{% include 'footer.html' %}
+</form>
+{% endblock %}

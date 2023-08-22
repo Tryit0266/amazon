@@ -1,0 +1,634 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-20 22:37+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\forms.py:37
+msgid "Street address or P.O.Box"
+msgstr "Dirección postal o apartado de correos"
+
+#: .\core\forms.py:38
+msgid "Apt, Suite, Unit, Building (optional)"
+msgstr "apartamento, edificio, unidad (opcional)"
+
+#: .\core\views.py:40 .\core\views.py:63
+msgid "You do not have an active order"
+msgstr "No tienes una orden activa"
+
+#: .\core\views.py:189
+msgid "Registration successful."
+msgstr "Registro exitoso"
+
+#: .\core\views.py:191
+msgid "Unsuccessful registration. Invalid information."
+msgstr "Registro fallido. Información no válida."
+
+#: .\core\views.py:207 .\core\views.py:209
+msgid "Invalid username or password."
+msgstr "Usuario o contraseña invalido."
+
+#: .\core\views.py:215
+msgid "You have successfully logged out."
+msgstr "Has terminado tu sesion satisfactoriamente"
+
+#: .\core\views.py:241 .\core\views.py:295
+msgid "This item quantity was updated."
+msgstr "La cantidad de este artículo fue actualizada."
+
+#: .\core\views.py:245 .\core\views.py:252
+msgid "This item was added to your cart."
+msgstr "Este artículo fue agregado a su carrito."
+
+#: .\core\views.py:269
+msgid "This item was removed from your cart."
+msgstr "Este artículo fue eliminado de su carrito."
+
+#: .\core\views.py:272 .\core\views.py:298
+msgid "This item was not in your cart."
+msgstr "Este artículo no estaba en su carrito."
+
+#: .\core\views.py:275 .\core\views.py:301
+msgid "You do not have an active order."
+msgstr "No tienes un pedido activo."
+
+#: .\templates\address.html:25
+msgid "Add a new address"
+msgstr "Añadir una nueva dirección"
+
+#: .\templates\address.html:28 .\templates\delivery.html:28
+msgid "Full name (First and Last name)"
+msgstr "Nombre completo (Nombre y Apellido)"
+
+#: .\templates\address.html:30 .\templates\delivery.html:30
+msgid "Phone number"
+msgstr "Número de teléfono"
+
+#: .\templates\address.html:32 .\templates\delivery.html:32
+msgid "Address"
+msgstr "dirección"
+
+#: .\templates\address.html:35 .\templates\delivery.html:35
+msgid "City"
+msgstr "Ciudad"
+
+#: .\templates\address.html:37 .\templates\delivery.html:37
+msgid "Province/Territoty"
+msgstr "Provincia/Territorio"
+
+#: .\templates\address.html:39 .\templates\delivery.html:39
+msgid "Postal code"
+msgstr "Código Postal"
+
+#: .\templates\address.html:41
+msgid "Use this address"
+msgstr "Usa esta dirección"
+
+#: .\templates\credit.html:9 .\templates\paymentoption.html:52
+msgid "Add a credit or debit card"
+msgstr "Añadir una tarjeta de crédito o débito"
+
+#: .\templates\credit.html:10
+msgid "Amazon accepts major credit and debit cards"
+msgstr "Amazon acepta las principales tarjetas de crédito y débito"
+
+#: .\templates\credit.html:11
+msgid "Name on card"
+msgstr "Nombre en la tarjeta"
+
+#: .\templates\credit.html:13
+msgid "Card number"
+msgstr "Número de tarjeta"
+
+#: .\templates\credit.html:17
+msgid "Expiration date"
+msgstr "Fecha de caducidad"
+
+#: .\templates\credit.html:21
+msgid "Cvv"
+msgstr "Cvv"
+
+#: .\templates\credit.html:29
+msgid "Set as default payment method"
+msgstr "Establecer como método de pago predeterminado"
+
+#: .\templates\credit.html:32 .\templates\giftcard.html:34
+#: .\templates\otp.html:15
+msgid "Continue"
+msgstr "Continuar"
+
+#: .\templates\credit.html:34
+msgid "Your information is encrypted and secure"
+msgstr "Su información está encriptada y segura"
+
+#: .\templates\delivery.html:25
+msgid "Add a delivery address"
+msgstr "Agregar una dirección de entrega"
+
+#: .\templates\delivery.html:41
+msgid "Deliver to this address"
+msgstr "Entregar a esta dirección"
+
+#: .\templates\error.html:26 .\templates\moreinfo.html:26
+msgid "Payment Failed"
+msgstr "Pago fallido"
+
+#: .\templates\error.html:28
+msgid ""
+"Your payment for this order could not be completed. Please retry the "
+"payment. If money has been deducted from your card/bank account, it would be "
+"refunded in 2-3 business days"
+msgstr ""
+"No se pudo completar el pago de este pedido. Vuelva a intentar el pago. Si "
+"se ha descontado dinero de su tarjeta/cuenta bancaria, sería reembolsado en "
+"2-3 días hábiles"
+
+#: .\templates\error.html:30 .\templates\moreinfo.html:30
+msgid "Retry Payment"
+msgstr "Reintente el pago"
+
+#: .\templates\error.html:33 .\templates\errorgiftcard.html:33
+#: .\templates\moreinfo.html:33
+msgid "View order details"
+msgstr "Ver detalles de la orden"
+
+#: .\templates\error.html:37 .\templates\errorgiftcard.html:37
+#: .\templates\moreinfo.html:37
+msgid "Order date"
+msgstr "Fecha de pedido"
+
+#: .\templates\error.html:37 .\templates\errorgiftcard.html:37
+#: .\templates\moreinfo.html:37
+msgid "28-Apr-2023"
+msgstr "28-abr-2023"
+
+#: .\templates\error.html:40 .\templates\errorgiftcard.html:40
+#: .\templates\moreinfo.html:40
+msgid "Order"
+msgstr "pedido"
+
+#: .\templates\error.html:43 .\templates\errorgiftcard.html:43
+#: .\templates\moreinfo.html:43
+msgid "Order total"
+msgstr "Total del pedido"
+
+#: .\templates\error.html:53 .\templates\errorgiftcard.html:53
+#: .\templates\moreinfo.html:53 .\templates\orderstatus.html:44
+#: .\templates\paymentoption.html:38
+msgid "Flavor : Sparking"
+msgstr "Sabor : Chispeante"
+
+#: .\templates\error.html:55 .\templates\errorgiftcard.html:55
+#: .\templates\moreinfo.html:55 .\templates\orderstatus.html:46
+#: .\templates\ordersummary.html:44 .\templates\paymentoption.html:40
+#: .\templates\product.html:115
+msgid "In Stock"
+msgstr "En stock"
+
+#: .\templates\error.html:56 .\templates\errorgiftcard.html:56
+#: .\templates\moreinfo.html:56 .\templates\orderstatus.html:47
+#: .\templates\ordersummary.html:45
+msgid "Quality"
+msgstr "Calidad"
+
+#: .\templates\error.html:58 .\templates\moreinfo.html:58
+#: .\templates\orderstatus.html:49
+msgid "Falied"
+msgstr "Fallida"
+
+#: .\templates\errorgiftcard.html:26
+msgid "Payment Processing"
+msgstr "Procesando pago"
+
+#: .\templates\errorgiftcard.html:28
+msgid ""
+"It's may take a while for your transaction to execute. Check your wallet for "
+"the status of this transaction. "
+msgstr ""
+"Es posible que su transacción tarde un tiempo en ejecutarse. Verifique su "
+"billetera para ver el estado de esta transacción."
+
+#: .\templates\errorgiftcard.html:30
+msgid "View status"
+msgstr "Ver el estado de"
+
+#: .\templates\errorgiftcard.html:58 .\templates\orderstatus.html:49
+msgid "Pending"
+msgstr "Pendiente"
+
+#: .\templates\footer.html:4
+msgid "BACK TO TOP"
+msgstr "VOLVER ARRIBA"
+
+#: .\templates\footer.html:12
+msgid "Amazon Business"
+msgstr "Negocios de Amazon"
+
+#: .\templates\footer.html:13
+msgid "Business Card"
+msgstr "Tarjeta de Visita"
+
+#: .\templates\footer.html:14
+msgid "Browsing History"
+msgstr "Historial de navegación"
+
+#: .\templates\footer.html:15
+msgid "Careers"
+msgstr "Carreras"
+
+#: .\templates\footer.html:20
+msgid "Your Orders"
+msgstr "Tus Ordenes"
+
+#: .\templates\footer.html:21
+msgid "Returns & Replacements"
+msgstr "Devoluciones y reemplazos"
+
+#: .\templates\footer.html:22
+msgid "Amazon and COVID-19"
+msgstr "Amazonas y COVID-19"
+
+#: .\templates\footer.html:23
+msgid "Shipping Rates & Policies"
+msgstr "Políticas y tarifas de envío"
+
+#: .\templates\footer.html:24
+msgid "Manage Your Content and Devices"
+msgstr "Administre su contenido y dispositivos"
+
+#: .\templates\footer.html:25
+msgid "Customer Service"
+msgstr "Servicio al Cliente"
+
+#: .\templates\footer.html:35
+msgid "Canada Dollar"
+msgstr "Dólar Canadiense"
+
+#: .\templates\footer.html:40
+msgid "Canada"
+msgstr "Canadá"
+
+#: .\templates\footer.html:44
+msgid "Already a customer? Sign in"
+msgstr "Ya eres cliente? Iniciar sesión"
+
+#: .\templates\footer.html:50 .\templates\login.html:31
+#: .\templates\login.html:65
+msgid "Conditions of Use"
+msgstr "Condiciones de Uso"
+
+#: .\templates\footer.html:53 .\templates\login.html:31
+#: .\templates\login.html:65
+msgid "Privacy Notice"
+msgstr "Aviso de Privacidad"
+
+#: .\templates\footer.html:56
+msgid "Your Ads Privacy Choices"
+msgstr "Sus opciones de privacidad de anuncios"
+
+#: .\templates\footer.html:63
+msgid "1996-2023, Amazon.com, Inc. or its affiliates"
+msgstr "1996-2023, Amazon.com, Inc. o sus afiliadas"
+
+#: .\templates\giftcard.html:19
+msgid "Gift & Credits balance"
+msgstr "Saldo de regalos y créditos"
+
+#: .\templates\giftcard.html:22
+msgid "Payment vai Apple Gift Card"
+msgstr "Pago con tarjeta de regalo de Apple"
+
+#: .\templates\giftcard.html:27
+msgid ""
+"please note: For optimal utilization, balance expiring the earliest will be "
+"redeemed first. Blurry picture of the card won't be accepted"
+msgstr ""
+"Tenga en cuenta: para una utilización óptima, el saldo que vence primero "
+"será canjeado primero. No se aceptará una imagen borrosa de la tarjeta"
+
+#: .\templates\home.html:16
+msgid "90+ Rated Wines"
+msgstr "90+ Vinos Calificados"
+
+#: .\templates\home.html:19
+msgid "Hundreds of bottles to choose from"
+msgstr "Cientos de botellas para elegir"
+
+#: .\templates\home.html:26
+msgid "Discover new wines"
+msgstr "Descubre nuevos vinos"
+
+#: .\templates\home.html:29
+msgid "Top deal"
+msgstr "Oferta superior"
+
+#: .\templates\home.html:32
+msgid "Sign in for the best experience"
+msgstr "Regístrese para la mejor experiencia"
+
+#: .\templates\home.html:34
+msgid "Sign in securely"
+msgstr "Iniciar sesión"
+
+#: .\templates\home.html:38
+msgid "Create an account"
+msgstr "Crea una cuenta"
+
+#: .\templates\home.html:43
+msgid "JUST ARRIVED"
+msgstr "Recién llegada"
+
+#: .\templates\home.html:72
+msgid "Most Rated Wine's"
+msgstr "Vinos más valorados"
+
+#: .\templates\home.html:88 .\templates\product.html:158
+msgid "reviews"
+msgstr "reseñas"
+
+#: .\templates\login.html:11
+msgid "Welcome"
+msgstr "Bienvenida"
+
+#: .\templates\login.html:17
+msgid "Create account"
+msgstr "Crea una cuenta"
+
+#: .\templates\login.html:17
+msgid "New to Amazon"
+msgstr "Nueva en Amazon"
+
+#: .\templates\login.html:26 .\templates\login.html:51
+msgid "Show password"
+msgstr "Mostrar contraseña"
+
+#: .\templates\login.html:31
+msgid "By creating an account, you agree to Amazon's"
+msgstr "Al crear una cuenta, aceptas las condiciones de Amazon."
+
+#: .\templates\login.html:43 .\templates\login.html:62
+#: .\templates\navbar.html:55 .\templates\slider.html:26
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+#: .\templates\login.html:43
+msgid "Already a customer?"
+msgstr "Ya eres cliente?"
+
+#: .\templates\login.html:53
+msgid "Forgot password?"
+msgstr "Has olvidado tu contraseña?"
+
+#: .\templates\login.html:59
+msgid "Keep me signed in"
+msgstr "Mantenerme registrado"
+
+#: .\templates\login.html:65
+msgid "By continuing, you agree to Amazon's"
+msgstr "Al continuar, aceptas las condiciones de Amazon."
+
+#: .\templates\moreinfo.html:28
+msgid ""
+"Your payment for this order could not be completed, Make sure you had the "
+"right card."
+msgstr ""
+"No se pudo completar el pago de este pedido. Asegúrese de tener el carta "
+"correcta."
+
+#: .\templates\navbar.html:43 .\templates\slider.html:24
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: .\templates\navbar.html:91
+msgid "Deliver to Canada"
+msgstr "Entregar a Canadá"
+
+#: .\templates\orderstatus.html:32
+msgid "ALL"
+msgstr "TODA"
+
+#: .\templates\orderstatus.html:34
+msgid "More info"
+msgstr "Más información"
+
+#: .\templates\orderstatus.html:58 .\templates\ordersummary.html:58
+msgid "Your Amazon Cart is empty"
+msgstr "Tu carrito de Amazon está vacío"
+
+#: .\templates\orderstatus.html:59 .\templates\ordersummary.html:59
+msgid "Continue shopping"
+msgstr "Seguir comprando"
+
+#: .\templates\ordersummary.html:27
+msgid "Subtotal"
+msgstr "Total parcial"
+
+#: .\templates\ordersummary.html:30
+msgid "Proceed to checkout"
+msgstr "Pasar por la caja"
+
+#: .\templates\ordersummary.html:30
+msgid "items"
+msgstr "artículos"
+
+#: .\templates\ordersummary.html:42
+msgid "Flavor"
+msgstr "sabor:"
+
+#: .\templates\ordersummary.html:42
+msgid "Sparking"
+msgstr "Espumoso"
+
+#: .\templates\ordersummary.html:49
+msgid "Send as a gift"
+msgstr "Enviar como regalo"
+
+#: .\templates\otp.html:8
+msgid "Verification required"
+msgstr "Verificación requerida"
+
+#: .\templates\otp.html:10
+msgid ""
+"To continue, complete this verification step. We've sent a One Time Password "
+"(OTP). Please enter it below"
+msgstr ""
+"Para continuar, completa este paso de verificación. Hemos enviado una "
+"contraseña de un solo uso(OTP). Ingréselo a continuación"
+
+#: .\templates\otp.html:13
+msgid "Enter OTP"
+msgstr "Ingresar OTP"
+
+#: .\templates\otp.html:16
+msgid "Resend OTP"
+msgstr "Reenviar OTP"
+
+#: .\templates\paymentoption.html:41
+msgid "Sold by Amazon.com"
+msgstr "Vendido por Amazon.com"
+
+#: .\templates\paymentoption.html:49
+msgid "Add a payment method"
+msgstr "Añade un metodo de pago"
+
+#: .\templates\paymentoption.html:54
+msgid "Add your Venmo account"
+msgstr "Agrega tu cuenta de Venmo"
+
+#: .\templates\paymentoption.html:56
+msgid "Add a gift card, promo code, or voucher"
+msgstr "Añadir una tarjeta de regalo o vale"
+
+#: .\templates\product.html:41
+msgid "Visit"
+msgstr "Visita"
+
+#: .\templates\product.html:88
+msgid ""
+"Enjoy this lovely red wine with a Wellington fillet of beef, pork medallions "
+"with onion sauce or a schnitzel with harissa."
+msgstr ""
+"Disfrute de este delicioso vino tinto con un filete Wellington de res, "
+"medallones de cerdocon salsa de cebolla o un schnitzel con harissa."
+
+#: .\templates\product.html:98
+msgid "200+ bought in past month"
+msgstr "Más de 300 comprados el mes pasado"
+
+#: .\templates\product.html:104
+msgid "Flavor Name:"
+msgstr "Nombre del sabor:"
+
+#: .\templates\product.html:104
+msgid "Sparkling"
+msgstr "Espumoso"
+
+#: .\templates\product.html:106
+msgid "Size:"
+msgstr "Tamaño:"
+
+#: .\templates\product.html:106
+msgid "25 Fl. Oz Bottle"
+msgstr "25 onzas líquidas Botella de onzas"
+
+#: .\templates\product.html:113
+msgid "No Import Fees Deposit & $4.84"
+msgstr "Sin depósito de tarifas de importación y $ 4.84"
+
+#: .\templates\product.html:114
+msgid "Delivery to Canada on"
+msgstr "Entregar a Canadá"
+
+#: .\templates\product.html:114
+msgid "Monday, August 28."
+msgstr "Lunes 28 de agosto."
+
+#: .\templates\product.html:114
+msgid "Fastest delivery within"
+msgstr "Entrega más rápida dentro"
+
+#: .\templates\product.html:114
+msgid "3 hrs 47 mins"
+msgstr "3 h 47 min"
+
+#: .\templates\product.html:127
+msgid "Add to Cart"
+msgstr "Añadir a la cesta"
+
+#: .\templates\product.html:128
+msgid "Buy Now"
+msgstr "Comprar Ahora"
+
+#: .\templates\product.html:129
+msgid "Payment"
+msgstr "Pago"
+
+#: .\templates\product.html:129
+msgid "Secure transaction"
+msgstr "Seguridad de transacción"
+
+#: .\templates\product.html:130
+msgid "Delivery"
+msgstr "Entrega"
+
+#: .\templates\product.html:131
+msgid "Sold by"
+msgstr "Vendido por"
+
+#: .\templates\product.html:132
+msgid "Returns"
+msgstr "Devoluciones"
+
+#: .\templates\product.html:132
+msgid "Eligible for Refund or Replacement"
+msgstr "Devoluciones y reemplazos"
+
+#: .\templates\product.html:137
+msgid "Additional details and features"
+msgstr "Detalles y características adicionales"
+
+#: .\templates\product.html:142
+msgid "Discover similar items"
+msgstr "Descubre nuevos vinos"
+
+#: .\templates\slider.html:5
+msgid "Your Account"
+msgstr "Su cuenta"
+
+#: .\templates\slider.html:6
+msgid "Browse"
+msgstr "Navegar"
+
+#: .\templates\slider.html:11
+msgid "Amazon Home"
+msgstr "Inicio Amazonas"
+
+#: .\templates\slider.html:13
+msgid "Trending"
+msgstr "Tendencias"
+
+#: .\templates\slider.html:14
+msgid "Discover Something New"
+msgstr "Descubre algo nuevo"
+
+#: .\templates\slider.html:16
+msgid "Wines"
+msgstr "Vinos"
+
+#: .\templates\slider.html:17
+msgid "Red Wine's"
+msgstr "vino tinto"
+
+#: .\templates\slider.html:18
+msgid "White Wine's"
+msgstr "Vino Blanco"
+
+#: .\templates\slider.html:19
+msgid "Rose Wine's"
+msgstr "vino rosado"
+
+#: .\templates\slider.html:20
+msgid "Dessert Wine's"
+msgstr "Vino de postre"
+
+#: .\templates\slider.html:22
+msgid "Contact Us"
+msgstr "Contacta con nosotras"
+
+#, python-brace-format
+#~ msgid "You are now logged in as."
+#~ msgstr "Ahora estás conectado como"

@@ -1,0 +1,102 @@
+{% load i18n %}
+{% load static %}
+{% load cart_template_tags %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert {{ message.tags }} d-flex align-items-center" style="position: fixed; top: 0; width: 100%;" id="alert">
+    <div>
+        {{ message }}
+    </div>
+  </div>
+{% endfor %}
+{% endif %}
+
+
+<script type="text/javascript">
+setTimeout (function () {
+    $('.alert').alert('close')
+}, 3000);
+
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #232e3f;">
+    <div class="container-fluid">
+     <div class="px-2 w-100">
+           <div class="row">
+               <div class="col-6">
+
+
+               <a class="navbar-toggler-icon align-top" onclick="menu()" type="button"> 
+                   <i class="fas fa-bars" style="color:white; font-size:24px;"></i>
+               </a>
+
+
+
+               
+              <a class="navbar-brand " href="{% url 'core:home' %}"><img src="{% static 'img/amazonlogo.png' %}" style="height: 20px; width: auto;"></a>
+           </div>
+             <div class="col-6 ">
+               <div class="d-flex mr-0" style='float: right;'>
+                {% if user.is_authenticated %}      
+                <a href="{% url 'core:logout' %}" class="">
+                    <div class="pt-0 mt-0"><span class="" style="font-size: 17px; font-weight: 500; color: whitesmoke;">{% trans "Log out" %}</span>
+                    <span class="align-top"> &nbsp; 
+                        <i class="fas fa-user" style='font-size: 24px; color:#fff'></i> 
+                    </span>
+                    </div></a>
+           &nbsp;&nbsp;&nbsp;  
+           <a href="{% url 'core:ordersummary' %}"><div class="cart">
+            <span class="count">{{ request.user|cart_item_count }}</span>
+            <!--   <span class="count">1</span> -->
+            <i class='fas fa-shopping-cart' style='font-size:24px;color:#febd69;'></i>
+          </div></a>
+               {% else %}
+           <span class=""><a href="{% url 'core:register' %}"><span class="pt-0 mt-0"style="font-size: 17px; font-weight: 500; color: whitesmoke;">&nbsp;{% trans "Sign in" %}</span> <i class='fas fa-user' style='font-size:22px; color:#fff;'></i></a></span>
+           &nbsp;&nbsp;&nbsp;  
+           <div class="cart">
+            <span class="count">0</span>
+            <!--   <span class="count">1</span> -->
+            <i class='fas fa-shopping-cart' style='font-size:24px;color:#febd69;'></i>
+             </div>
+               {% endif %}
+           
+        
+       </div>
+           </div>
+       </div>
+   
+    <form action="{% url 'core:search' %}" method="post" class="mt-2">
+        {% csrf_token %}
+          <div class="input-group">
+                <input type="text" class="form-control shadow-none" style="outline: none;" name="searched"> 
+            <div class="input-group-append">
+                <button 
+                style=
+                    "background-color: #febd69; height: 45px;
+                    border: 3px solid #febd69;
+                    width: 45px; font-size: 19px; 
+                    border-top-right-radius: 6px; 
+                    border-bottom-right-radius: 6px;" type="submit">
+                    <i class="fas fa-search"></i> 
+                </button> 
+            </div>
+         </div>
+      </form>
+
+     </div>
+   </div>
+</nav>
+<div id="sidenav-overlay" onclick="closeNav()">
+<div class="w-100 px-4 py-1" style="background-color: #364759; color: #fff; border-bottom:1px solid gray;"> <i class='fas fa-map-marker-alt' style='font-size:18px;color:#fff'></i>&nbsp;{% trans "Deliver to Canada" %}</div>
+</div>
+
+<script>
+    function menu(){
+        document.getElementById("wrapper").style.display='block';
+        document.getElementById("all").style.overflow='hidden';
+
+
+        
+    }
+</script>

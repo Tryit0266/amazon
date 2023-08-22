@@ -1,0 +1,39 @@
+{% extends "user/header.html" %}
+{% load i18n %}
+{% load static %}
+{% block style  %}
+<style>
+   body,
+   html
+   {
+    background-color: #f3f3f3;
+    height: 100%;
+    margin: 0;
+   }
+</style>
+{% endblock %}
+
+{% block content  %}
+<div class="px-3 py-3">
+    <div class="" style="font-size: 18px;">
+        <span class="" style="font-weight: bold;">{% trans "Gift & Credits balance" %}:</span><span class="" style="float: right; color: #106b7c;">$0.00</span>
+    </div>
+    <hr>
+    <div class="" style="font-weight: bold; font-size: 15px;">{% trans "Payment vai Apple Gift Card" %}.</div>
+    <center><div class="my-4">
+        <img src="{% static 'img/applecard.png' %}" height="200px" width="auto">
+    </div></center>
+    <div class="">
+        {% trans "please note: For optimal utilization, balance expiring the earliest will be redeemed first. Blurry picture of the card won't be accepted" %}
+    </div>
+    <form method="POST" enctype="multipart/form-data">  
+        {% csrf_token %}
+        <div class="pt-3">
+        {{ form.image }} 
+        </div> 
+        <button type="submit" class="btn btn-lg shadow rounded my-4" style="width: 100%; font-size: 15px; background-color: #fed813;">{% trans "Continue" %}</button>  
+    </form>
+
+
+</div>
+{% endblock content %}

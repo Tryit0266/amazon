@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block style %}
+<style>
+    .checked {
+        color: #febd69;
+    }
+    
+    .fa-heart {
+        stroke: #999999;
+        color: #fff;
+        stroke-width: 30px;
+    }
+    
+    .fa-star {
+        stroke: #febd69;
+        stroke-width: 30px;
+    }
+    
+ 
+    </style>
+{% endblock %}
+
+{% block content  %}
+{% if searched %}
+<div class="py-1 px-4 my-1 pb-3 pt-2 shadow">
+    <span class="px-2 shadow"  style="border-radius: 4px; border: 1px solid #cbe2e6; color: #206d7a; background-color: #e6f4f6;">Sparking wines</span>
+</div>
+
+<div class="py-3 px-4">
+    <div class="row">
+        {% for item in context %}
+        <input type="hidden" id="sub-rate" value="{{ item.rate }}">
+        <div class="col-6 col-md-4 col-lg-3 my-2">
+            <a href="{{ item.get_absolute_url }}"><div class="card" >
+             <center><img src="{{ item.photo }}" style="height: 160px; width: 40px;" class="card-img-top py-2" alt="..."></center>   
+                <div class="card-body">
+                  <div class="card-text text-truncate-container">
+                  <p class="text-truncate mb-0"> {{ item.title }} </p>
+                  </div>
+                 <div class="">
+                    <img src="{% static 'img/star5.png' %}" height="20px" width="auto">
+                 </div>
+                 <div class="ml-0" id="review" style="color: #364759; font-weight: bold;">543 reviews</div>
+                 <div class="" id="" style=" font-weight: bold;">${{ item.price }}</div>
+                </div>
+              </div></a>
+        </div>
+        {% endfor %}
+      </div>
+</div>
+
+
+{% endif %}
+
+
+{% endblock %}

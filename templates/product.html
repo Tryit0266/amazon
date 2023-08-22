@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block style %}
+<style>
+.checked {
+    color: #febd69;
+}
+
+.fa-heart {
+    stroke: #999999;
+    color: #fff;
+    stroke-width: 30px;
+}
+
+.fa-star {
+    stroke: #febd69;
+    stroke-width: 30px;
+}
+
+
+
+
+
+
+
+
+
+</style>
+{% endblock %}
+
+{% block body %}onload="star()" {%  endblock %}
+
+{% block content  %}
+<input type="hidden" id="rate" value="{{ object.rate }}">
+
+
+<!------------------------------------------------------------------------>
+<div class="mx-4 py-3">
+    <div class="" style="font-size: 13px;"><span style="color: #106b7c;  font-weight: bold;">{% trans "Visit" %} Bodegas Agronavarra</span>
+      <div class="d-inline" style="float: right; ">
+         <div id="star" class="d-inline" >
+            <div class="d-inline">{{ object.rate }}:00</div>&nbsp;
+            
+            <div id="star-1" class="star1" style="display: none;">
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+            </div>
+            <div id="star-2" class="star2" style="display: none;">
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+            </div>
+            <div id="star-3" class="star3" style="display: none;">
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+            </div>
+            <div id="star-4" class="star4" style="display: none;">
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star" aria-hidden="true"></span>
+            </div>
+            <div id="star-5" class="star5" style="display: none;">
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+                <span class="fa fa-star checked" aria-hidden="true"></span>
+            </div>
+        
+
+
+            <div class="d-inline" style="color: #106b7c; font-weight: bold;">&nbsp;&nbsp;543</div>
+         </div>
+      </div>
+      <div class="my-1" style="color: #364759;">
+        {% trans "Enjoy this lovely red wine with a Wellington fillet of beef, pork medallions with onion sauce or a schnitzel with harissa." %}
+      </div>
+      <div class="">
+        <div class="text-center">
+            <img class="img-fluid" src="{{ object.photo }}" style="height: 250px; width: auto;" alt="">
+        </div>
+        <div class="pl-2">
+            <i class="fas fa-heart" style="font-size: 22px;"></i>
+        </div>
+      </div>
+      <div class="mt-2 text-center">{% trans "200+ bought in past month" %}</div>
+    </div>
+ </div>
+ 
+ <div class="">
+    <hr>
+    <div class="mx-4 my-2" ><span style="font-size: 14px;">{% trans "Flavor Name:" %} </span><span id="" style="font-weight: bold; font-size: 15px;"> {% trans "Sparkling" %} {{object.color}}</span></div>
+    <hr>
+    <div class="mx-4 my-2" ><span style="font-size: 14px;">{% trans "Size:" %} </span><span id="" style="font-weight: bold; font-size: 15px;"> {% trans "25 Fl. Oz Bottle" %}</span></div>
+    <hr>
+ </div>
+ <div class="my-2 mx-4">
+    <div class="m-0" style="font-size: 28px;">
+        <span>${{object.price}}</span>
+    </div>
+    <div class="">{% trans "No Import Fees Deposit & $4.84" %}</div>
+    <div class="">{% trans "Delivery to Canada on" %}</div> <span id="date" style="font-weight: bold;"> {% trans "Monday, August 28." %}</span><div>{% trans "Fastest delivery within" %} <span class="" style="color: #106b7c; font-weight: bold;">{% trans "3 hrs 47 mins" %}</span></div>
+    <div class="my-1" style="color: #177317; font-size: 18px;">{% trans "In Stock" %}</div>
+    <select class="form-select form-select-sm mb-3 shadow bg-light text-center" aria-label=".form-select-sm example" style="width: 90px;">
+        <option selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+
+      <a href="{{ object.get_added_to_cart_url }}"><button type="button" class="btn w-100 mb-3 shadow" style="background-color: #fed813; border-radius: 15px;">{% trans "Add to Cart" %}</button></a>
+      <a href="{{ object.get_added_to_cart_url }}"><button type="button" class="btn w-100 shadow mb-2" style="background-color: #ffa41d; border-radius: 15px;">{% trans "Buy Now" %}</button></a>
+    <div class=""><div class="pr-3" style="color: #999999; display: inline;">{% trans "Payment" %}</div><span class="mx-3" style="color: #106b7c; float: right;">{% trans "Secure transaction" %}</span></div>
+    <div class=""><div class="pr-3" style="color: #999999; display: inline;">{% trans "Delivery" %} </div><span class="mx-3" style="float: right;" >Amazon</span></div>
+    <div class=""><div class="pr-3" style="color: #999999; display: inline;">{% trans "Sold by" %}</div><span class="mx-4" style="color: #106b7c; float: right;">Surely Wines</span></div>
+    <div class=""><div class="pr-3 mb-4" style="color: #999999; display: inline;">{% trans "Returns" %}</div><span class="mx-4" style="color: #106b7c; float: right;">{% trans "Eligible for Refund or Replacement" %}</span></div>
+ </div>
+ <div id="hr"></div>
+
+<div class="mx-4 py-2">
+    <div class="my-1" style=" font-size: 18px; font-weight: bold;">{% trans "Additional details and features" %}</div>
+    {{ object.description }}
+</div>
+<div id="hr"></div>
+<div class="mx-4 py-2">
+    <div class="my-1" style=" font-size: 18px;">{% trans "Discover similar items" %}</div>
+       <div class="">
+          <div class="row">
+            {% for item in items %}
+            <input type="hidden" id="sub-rate" value="{{ item.rate }}">
+            <div class="col-6 col-md-4 col-lg-3 my-2">
+                <a href="{{ item.get_absolute_url }}"><div class="card">
+                 <center><img src="{{ item.photo }}" style="height: 160px; width: 40px;" class="card-img-top py-2" alt="..."></center>   
+                    <div class="card-body">
+                      <div class="card-text text-truncate-container">
+                      <p class="text-truncate mb-0"> {{ item.title }} </p>
+                      </div>
+
+                     <div class="">
+                        <img src="{% static 'img/star5.png' %}" height="20px" width="auto">
+                     </div>
+                     <div class="ml-0" id="review" style="color: #364759; font-weight: bold;">543 {% trans "reviews" %}</div>
+                     <div class="" id="" style=" font-weight: bold;">${{ item.price }}</div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            {% endfor %}
+          </div>
+       </div>
+</div>
+
+
+
+ <script>
+    const rate = document.getElementById("rate").value;
+    const star1 = document.getElementsByClassName("star1");
+    const star2 = document.getElementsByClassName("star2");
+    const star3 = document.getElementsByClassName("star3");
+    const star4 = document.getElementsByClassName("star4");
+    const star5 = document.getElementsByClassName("star5");
+
+    const subrate = document.getElementById("sub-rate").value;
+    const sstar1 = document.getElementsByClassName("sstar1");
+    const sstar2 = document.getElementsByClassName("sstar2");
+    const sstar3 = document.getElementsByClassName("sstar3");
+    const sstar4 = document.getElementsByClassName("sstar4");
+    const sstar5 = document.getElementsByClassName("sstar5");
+
+    function star(){
+        if (rate == 1){
+            for (var i=0; i<star1.length; i++){
+                star1[i].style.display="inline";
+            }
+        } else if (rate == 2){
+            for (var i=0; i<star2.length; i++){
+                star2[i].style.display="inline";
+            }
+        } else if (rate == 3){
+            for (var i=0; i<star3.length; i++){
+                star3[i].style.display="inline";
+            }
+        } else if (rate == 4){
+            for (var i=0; i<star4.length; i++){
+                star4[i].style.display="inline";
+            }
+        } else if (rate == 5){
+            for (var i=0; i<star5.length; i++){
+                star5[i].style.display="inline";
+            }
+        }
+
+        for (var i=0; i<sstar1.length; i++){
+        if (subrate == 1){
+            for (var i=0; i<sstar1.length; i++){
+                sstar1[i].style.display="inline";
+            }
+        } else if (subrate == 2){
+            for (var i=0; i<sstar2.length; i++){
+                sstar2[i].style.display="inline";
+            }
+        } else if (subrate == 3){
+            for (var i=0; i<sstar3.length; i++){
+                sstar3[i].style.display="inline";
+            }
+        } else if (subrate == 4){
+            for (var i=0; i<sstar4.length; i++){
+                sstar4[i].style.display="inline";
+            }
+        } else if (subrate == 5){
+            for (var i=0; i<sstar5.length; i++){
+                sstar5[i].style.display="inline";
+            }
+        }
+    }}
+</script>
+<script>
+    const t = new Date();
+    const to = new Date(t);
+    to.setDate(t.getDate() + 1);
+    let text = to.toDateString();
+    document.getElementById("date").innerHTML = text;
+</script>
+{% endblock %}
